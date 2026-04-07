@@ -1,0 +1,19 @@
+name: epub_plus
+description: Epub Parser for Dart. Epub package fork. Suitable for use on the Server, the Web, or in Flutter
+homepage: https://github.com/4akloon/epub_plus
+issue_tracker: https://github.com/4akloon/epub_plus/issues
+version: 5.1.0
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  archive: ">=3.4.10 <5.0.0"
+  path: ">=1.9.0 <2.0.0"
+  xml: ">=6.4.0 <7.0.0"
+  image: ">=4.0.0 <5.0.0"
+  collection: ">=1.18.0 <2.0.0"
+
+dev_dependencies:
+  test: ^1.26.3
+  lints: ^6.0.0

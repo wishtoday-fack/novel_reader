@@ -1,0 +1,63 @@
+name: novel_reader
+description: "A cross-platform novel reading application."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # 状态管理
+  provider: ^6.1.0
+
+  # 数据库
+  sqflite: ^2.3.0
+  path_provider: ^2.1.0
+
+  # 文件解析
+  ffi: ^2.1.2
+  epub_plus:
+    path: ./epub_plus
+  pdfx: ^2.6.0
+  dart_mobi: ^1.0.2
+  charset_converter: ^2.1.0
+
+  # UI组件
+  cupertino_icons: ^1.0.8
+  flutter_slidable: ^4.0.3
+
+  # 文件选择
+  file_picker: ^10.3.10
+
+  # 阅读器功能
+  flutter_tts: ^4.2.5
+  screen_brightness: ^2.1.7
+  wakelock_plus: ^1.2.0
+
+  # 工具库
+  path: ^1.8.0
+  crypto: ^3.0.3
+  uuid: ^4.0.0
+  html: ^0.15.0
+  intl: ^0.20.2
+  shared_preferences: ^2.2.0
+  permission_handler: ^12.0.1
+
+  # 图片处理
+  image: ^4.0.0
+  cached_network_image: ^3.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  sqflite_common_ffi: ^2.3.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/fonts/

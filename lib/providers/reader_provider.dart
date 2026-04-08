@@ -460,7 +460,14 @@ class ReaderProvider extends ChangeNotifier {
     notifyListeners();
 
     try {
-      final content = await _parser.getChapterContent(_book!.filePath, index, _book!.format);
+      // 直接从数据库读取的章节数据中获取内容，避免重新解析文件
+      String content = _chapters[index].content ?? '';
+      
+      // 如果数据库中没有内容（可能导入时未保存），才从文件解析
+      if (content.isEmpty) {
+        content = await _parser.getChapterContent(_book!.filePath, index, _book!.format);
+      }
+      
       _loadedChapters[index] = ChapterContent(
         index: index,
         title: _chapters[index].title,
@@ -527,7 +534,14 @@ class ReaderProvider extends ChangeNotifier {
     if (_book == null || index < 0 || index >= _chapters.length) return;
 
     try {
-      final content = await _parser.getChapterContent(_book!.filePath, index, _book!.format);
+      // 直接从数据库读取的章节数据中获取内容，避免重新解析文件
+      String content = _chapters[index].content ?? '';
+      
+      // 如果数据库中没有内容（可能导入时未保存），才从文件解析
+      if (content.isEmpty) {
+        content = await _parser.getChapterContent(_book!.filePath, index, _book!.format);
+      }
+      
       _loadedChapters[index] = ChapterContent(
         index: index,
         title: _chapters[index].title,
